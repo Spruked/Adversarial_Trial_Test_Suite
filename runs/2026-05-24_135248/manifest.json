@@ -1,0 +1,14 @@
+{
+  "run_id": "2026-05-24_135248",
+  "created_utc": "2026-05-24T18:52:48.774121+00:00",
+  "suite_root": "C:\\dev\\Desktop\\PLATFORM\\Cali_X_One\\Adversarial_Trial_Test_Suite",
+  "judges": [
+    "gemini",
+    "kimi",
+    "grok4",
+    "deepseek",
+    "chatgpt5_1"
+  ],
+  "ordering": "judge-major, one test at a time, phase 1->2->3 within each judge",
+  "total_tests": 15
+}

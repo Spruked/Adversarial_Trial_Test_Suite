@@ -68,7 +68,7 @@ class TestSuiteManager:
                 # Check if result placeholder is filled
                 result_file = results_path / f"JUDGE_{judge_name.upper()}_LOG.md"
                 if result_file.exists():
-                    with open(result_file, 'r') as f:
+                    with open(result_file, 'r', encoding='utf-8') as f:
                         content = f.read()
                         if '[Placeholder' not in content:
                             completed_tests += 1
@@ -118,7 +118,7 @@ class TestSuiteManager:
                 # Check completion
                 result_file = results_path / f"JUDGE_{judge_name.upper()}_LOG.md"
                 if result_file.exists():
-                    with open(result_file, 'r') as f:
+                    with open(result_file, 'r', encoding='utf-8') as f:
                         content = f.read()
                         if '[Placeholder' not in content:
                             completed_tests += 1
@@ -142,7 +142,7 @@ class TestSuiteManager:
         report_text = "\n".join(report)
 
         if output_file:
-            with open(output_file, 'w') as f:
+            with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(report_text)
             print(f"Report saved to {output_file}")
         else:

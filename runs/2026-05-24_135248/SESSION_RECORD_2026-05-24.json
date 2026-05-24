@@ -1,0 +1,37 @@
+﻿{
+  "session_date": "2026-05-24",
+  "repo": "C:/dev/Desktop/PLATFORM/Cali_X_One",
+  "trial_run_id": "2026-05-24_135248",
+  "classification": "ABORTED_INVALID_ENDPOINT_MODE",
+  "root_cause": "api_query echo-mode during adversarial adjudication",
+  "artifacts": {
+    "execution_log": "Adversarial_Trial_Test_Suite/runs/2026-05-24_135248/execution_log.csv",
+    "execution_log_snapshot": "Adversarial_Trial_Test_Suite/runs/2026-05-24_135248/execution_log.aborted_snapshot.csv",
+    "run_invalidation": "Adversarial_Trial_Test_Suite/runs/2026-05-24_135248/RUN_INVALIDATION.md",
+    "session_record": "Adversarial_Trial_Test_Suite/runs/2026-05-24_135248/SESSION_RECORD_2026-05-24.md"
+  },
+  "changes": [
+    "iss_module/cali_x_one/semantic/dsae.py",
+    "iss_module/cali_x_one/semantic/__init__.py",
+    "iss_module/api/api.py",
+    "run_agi_tests.py",
+    "docs/testing/tests/adversarial_bootstrap_paradox.py",
+    "docs/testing/tests/adversarial_causal_timelock.py",
+    "docs/testing/tests/adversarial_contradiction_blindspot.py",
+    "enhancements/tests/test_rod_cycle_smoke_enhancements.py"
+  ],
+  "verification": [
+    {
+      "command": "py -3.12 -m pytest -q --tb=short enhancements/tests/test_rod_cycle_smoke_enhancements.py tests/test_rod_cycle_smoke.py",
+      "result": "2 passed"
+    },
+    {
+      "command": "py -3.12 -m pytest -q --tb=short docs/testing/tests/adversarial_bootstrap_paradox.py docs/testing/tests/adversarial_causal_timelock.py docs/testing/tests/adversarial_contradiction_blindspot.py",
+      "result": "3 passed"
+    },
+    {
+      "command": "py -3.12 run_agi_tests.py",
+      "result": "9 passed, 2 skipped"
+    }
+  ]
+}
